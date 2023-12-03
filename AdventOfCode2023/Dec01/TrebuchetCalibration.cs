@@ -56,7 +56,7 @@
     // What is the sum of all of the calibration values?
     public static class TrebuchetCalibration
     {
-        public static Dictionary<string, int> Digits => new Dictionary<string, int>
+        public static Dictionary<string, int> Digits => new()
         {
             { "one", 1 },
             { "two", 2 },
@@ -69,7 +69,7 @@
             { "nine", 9 },
         };
 
-        public static List<string> Lines => new List<string>
+        public static List<string> Lines => new()
         {
             "6798seven",
             "six8b32csscsdgjsevenfivedlhzhc",

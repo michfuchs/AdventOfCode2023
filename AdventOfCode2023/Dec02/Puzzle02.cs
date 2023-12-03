@@ -13,7 +13,7 @@ namespace AdventOfCode2023.Dec02
         public int GetSolutionPartOne()
         {
             var total = 0;
-            foreach (var game in CubeConundrum.CubeGames)
+            foreach (var game in CubeConundrum.Games)
             {
                 var gameNumber = game.Split(":")[0].NumbersOnly();
                 var sets = game.Split(":")[1];
@@ -43,7 +43,7 @@ namespace AdventOfCode2023.Dec02
         public int GetSolutionPartTwo()
         {
             var total = 0;
-            foreach (var game in CubeConundrum.CubeGames)
+            foreach (var game in CubeConundrum.Games)
             {
                 var gameNumber = game.Split(":")[0].NumbersOnly();
                 var sets = game.Split(":")[1];
