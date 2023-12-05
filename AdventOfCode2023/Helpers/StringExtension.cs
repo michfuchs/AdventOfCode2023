@@ -65,11 +65,11 @@ namespace AdventOfCode2023.Helpers
         /// <param name="startIndex">Start of analyzed region within text</param>
         /// <param name="endIndex">End of analyzed region within text</param>
         /// <returns>A list of numbers</returns>
-        public static List<int> GetNumbersAtIndexes(this string s, int startIndex, int endIndex)
+        public static List<long> GetNumbersAtIndexes(this string s, int startIndex, int endIndex)
         {   
-            if (s == null) return new List<int>();
+            if (s == null) return new List<long>();
             var numberMatches = s.GetNumberMatches().Where(m => m.Index + m.Length > startIndex && m.Index <= endIndex);
-            return numberMatches.IntValues();
+            return numberMatches.LongValues();
         }
 
         #endregion Numbers

@@ -75,7 +75,7 @@
 
     // Your puzzle answer was 49710.
 
-    public class CubeConundrum
+    public class Data02
     {
         public static int MaxRed => 12;
         public static int MaxGreen => 13;

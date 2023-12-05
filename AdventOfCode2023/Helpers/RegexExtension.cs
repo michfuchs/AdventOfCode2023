@@ -24,9 +24,20 @@ namespace AdventOfCode2023.Helpers
             return matches.Select(m => m.IntValue()).RemoveNulls();
         }
 
+        public static List<long> LongValues(this IEnumerable<Match> matches)
+        {
+            return matches.Select(m => m.LongValue()).RemoveNulls();
+        }
+
         public static int? IntValue(this Match match)
         {
             return int.TryParse(match.Value, out int intValue) ? intValue : null;
+        }
+
+        public static long? LongValue(this Match match)
+        {
+            return long.TryParse(match.Value, out long longValue) ? longValue : null;
+
         }
     }
 }

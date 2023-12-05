@@ -2,7 +2,7 @@
 
 namespace AdventOfCode2023.Dec04
 {
-    public class Puzzle04 : IPuzzle
+    public class Solution04 : ISolution
     {
         public DateTime Date => new DateTime(2023, 12, 04);
 
@@ -15,10 +15,10 @@ namespace AdventOfCode2023.Dec04
         /// 4 winning numbers on card -> 8 points
         /// etc.
         /// </summary>
-        public int GetSolutionPartOne()
+        public long GetSolutionPartOne()
         {
             var total = 0;
-            var lines = ScratchCards.Cards;
+            var lines = Data04.Cards;
             var numLines = lines.Count;
             for (var iLine = 0; iLine < numLines; iLine++)
             {
@@ -26,7 +26,7 @@ namespace AdventOfCode2023.Dec04
                 var winningNumbers = line[10..].Split("|")[0].GetNumberMatches().IntValues();
                 var myNumbers = line[10..].Split("|")[1].GetNumberMatches().IntValues();
                 var intersects = winningNumbers.Intersect(myNumbers).ToList(); // winning numbers I have
-                total += intersects.Count == 0 ? 0 : (int)Math.Pow(2, intersects.Count - 1); ;
+                total += intersects.Count == 0 ? 0 : (int)Math.Pow(2, intersects.Count - 1);
             }
             return total;
         }
@@ -35,10 +35,10 @@ namespace AdventOfCode2023.Dec04
         /// Get the total number of accumulating scratch cards due to winning subsequent cards
         /// by winning numbers in the current card.
         /// </summary>
-        public int GetSolutionPartTwo()
+        public long GetSolutionPartTwo()
         {
             var total = 0;
-            var lines = ScratchCards.Cards;
+            var lines = Data04.Cards;
             var numLines = lines.Count;
 
             // set up a dictionary to hold the number of cards

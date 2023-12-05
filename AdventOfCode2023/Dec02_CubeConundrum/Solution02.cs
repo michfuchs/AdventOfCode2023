@@ -2,7 +2,7 @@
 
 namespace AdventOfCode2023.Dec02
 {
-    public class Puzzle02 : IPuzzle
+    public class Solution02 : ISolution
     {
         public DateTime Date => new DateTime(2023, 12, 02);
 
@@ -10,10 +10,10 @@ namespace AdventOfCode2023.Dec02
         /// Check for each game if it was possible with a set number of red/green/blue cubes available.
         /// If so, add game number to sum.
         /// </summary>
-        public int GetSolutionPartOne()
+        public long GetSolutionPartOne()
         {
             var total = 0;
-            foreach (var game in CubeConundrum.Games)
+            foreach (var game in Data02.Games)
             {
                 var gameNumber = game.Split(":")[0].NumbersOnly();
                 var sets = game.Split(":")[1];
@@ -30,7 +30,7 @@ namespace AdventOfCode2023.Dec02
                     if (draw.Contains("blue") && n > maxBlue) maxBlue = n.Value;
                 }
 
-                if (maxRed <= CubeConundrum.MaxRed && maxGreen <= CubeConundrum.MaxGreen && maxBlue <= CubeConundrum.MaxBlue)
+                if (maxRed <= Data02.MaxRed && maxGreen <= Data02.MaxGreen && maxBlue <= Data02.MaxBlue)
                     total += gameNumber ?? 0;
             }
             return total;
@@ -40,10 +40,10 @@ namespace AdventOfCode2023.Dec02
         /// Get the minimum number of red/green/blue cubes to produce the game result
         /// Sum up the power of each of these games
         /// </summary>
-        public int GetSolutionPartTwo()
+        public long GetSolutionPartTwo()
         {
             var total = 0;
-            foreach (var game in CubeConundrum.Games)
+            foreach (var game in Data02.Games)
             {
                 var gameNumber = game.Split(":")[0].NumbersOnly();
                 var sets = game.Split(":")[1];

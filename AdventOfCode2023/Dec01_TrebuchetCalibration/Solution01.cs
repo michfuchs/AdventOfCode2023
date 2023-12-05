@@ -1,6 +1,6 @@
 ﻿namespace AdventOfCode2023.Dec01
 {
-    public class Puzzle01 : IPuzzle
+    public class Solution01 : ISolution
     {
         public DateTime Date => new DateTime(2023, 12, 01);
 
@@ -8,10 +8,10 @@
         /// Get the first and last occurrence of a digit in a line (see TreebuchetCalibrationData). 
         /// Parse the lines for digits only. 
         /// </summary>
-        public int GetSolutionPartOne()
+        public long GetSolutionPartOne()
         {
             var total = 0;
-            foreach (var s in TrebuchetCalibration.Lines)
+            foreach (var s in Data01.Lines)
             {
                 var chars = s.ToCharArray();
                 int? firstNumber = null;
@@ -34,16 +34,16 @@
         /// Get the first and last occurrence of a digit in a line (see TreebuchetCalibrationData). 
         /// Parse the lines for digits and written numbers. 
         /// </summary>
-        public int GetSolutionPartTwo()
+        public long GetSolutionPartTwo()
         {
             var total = 0;
 
-            foreach (var line in TrebuchetCalibration.Lines)
+            foreach (var line in Data01.Lines)
             {
                 var firstDigitAtIndex = new Dictionary<int, int>();
                 var lastDigitAtIndex = new Dictionary<int, int>();
 
-                foreach (var d in TrebuchetCalibration.Digits)
+                foreach (var d in Data01.Digits)
                 {
                     // parse for the "written" digits and store found indexes in a dictionary
                     var firstIndexWritten = line.IndexOf(d.Key);

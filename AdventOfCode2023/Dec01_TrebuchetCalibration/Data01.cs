@@ -57,7 +57,7 @@
     // What is the sum of all of the calibration values?
 
     // Your puzzle answer was 55343.
-    public static class TrebuchetCalibration
+    public static class Data01
     {
         public static Dictionary<string, int> Digits => new()
         {

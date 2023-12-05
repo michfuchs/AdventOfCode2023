@@ -78,7 +78,7 @@
     // What is the sum of all of the gear ratios in your engine schematic?
 
     // Your puzzle answer was 84289137
-    internal class GondolaEngine
+    internal class Data03
     {
         public static List<string> GearRatios => new()
         {

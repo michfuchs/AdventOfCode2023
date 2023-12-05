@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace AdventOfCode2023
 {
-    internal interface IPuzzle
+    internal interface ISolution
     {
         DateTime Date { get; }
-        int GetSolutionPartOne();
-        int GetSolutionPartTwo();
+        long GetSolutionPartOne();
+        long GetSolutionPartTwo();
     }
 }

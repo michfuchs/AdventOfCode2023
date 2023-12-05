@@ -3,17 +3,17 @@ using System.Text.RegularExpressions;
 
 namespace AdventOfCode2023.Dec03
 {
-    public class Puzzle03 : IPuzzle
+    public class Solution03 : ISolution
     {
         public DateTime Date => new DateTime(2023, 12, 03);
 
         /// <summary>
         /// Sum all numbers which have symbols adjacent to them
         /// </summary>
-        public int GetSolutionPartOne()
+        public long GetSolutionPartOne()
         {
             var total = 0;
-            var lines = GondolaEngine.GearRatios;
+            var lines = Data03.GearRatios;
             var numLines = lines.Count;
             var lineLength = lines[0].Length;
             for (var iLine = 0; iLine < numLines; iLine++)
@@ -52,10 +52,10 @@ namespace AdventOfCode2023.Dec03
         /// <summary>
         /// Sum the product of all numbers which are connected by an adjacent asterisk
         /// </summary>
-        public int GetSolutionPartTwo()
+        public long GetSolutionPartTwo()
         {
             var total = 0;
-            var lines = GondolaEngine.GearRatios;
+            var lines = Data03.GearRatios;
             var numLines = lines.Count;
             for (var iLine = 0; iLine < numLines; iLine++)
             {
@@ -71,8 +71,8 @@ namespace AdventOfCode2023.Dec03
                     // find adjacent numbers
                     numbers.AddIfNotNull(line.GetNumberAtIndex(asteriskIndex - 1)); // same line left
                     numbers.AddIfNotNull(line.GetNumberAtIndex(asteriskIndex + 1)); // same line right
-                    numbers.AddRange(lineAbove.GetNumbersAtIndexes(asteriskIndex - 1, asteriskIndex + 1)); // line above
-                    numbers.AddRange(lineBelow.GetNumbersAtIndexes(asteriskIndex - 1, asteriskIndex + 1));  // line below
+                    //numbers.AddRange(lineAbove.GetNumbersAtIndexes(asteriskIndex - 1, asteriskIndex + 1)); // line above
+                    //numbers.AddRange(lineBelow.GetNumbersAtIndexes(asteriskIndex - 1, asteriskIndex + 1));  // line below
 
                     // sum gear ratio
                     if (numbers.Count > 1)
