@@ -57,7 +57,7 @@ namespace AdventOfCode2023.Dec05
                 seedRanges.Add(new MapLine(seedsAndRanges[i * 2], seedsAndRanges[i * 2], seedsAndRanges[i * 2 + 1]));
             }
             // iterate over all locations
-            for (var i = 78000000; i < int.MaxValue; i++)
+            for (var i = 78000000; i < int.MaxValue; i++) // originally started at 0
             {
                 if (i % 100000 == 0)
                     Console.Write($"\r{null, -12}Solution Part Two: Testing near location {i}..."); // show progress
