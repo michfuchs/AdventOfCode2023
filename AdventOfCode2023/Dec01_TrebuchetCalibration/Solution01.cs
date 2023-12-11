@@ -1,6 +1,6 @@
 ﻿namespace AdventOfCode2023.Dec01
 {
-    public class Solution01 : ISolution
+    public class Solution08 : ISolution
     {
         public DateTime Date => new DateTime(2023, 12, 01);
 
@@ -11,7 +11,7 @@
         public long GetSolutionPartOne()
         {
             var total = 0;
-            foreach (var s in Data01.Lines)
+            foreach (var s in Data08.Lines)
             {
                 var chars = s.ToCharArray();
                 int? firstNumber = null;
@@ -38,12 +38,12 @@
         {
             var total = 0;
 
-            foreach (var line in Data01.Lines)
+            foreach (var line in Data08.Lines)
             {
                 var firstDigitAtIndex = new Dictionary<int, int>();
                 var lastDigitAtIndex = new Dictionary<int, int>();
 
-                foreach (var d in Data01.Digits)
+                foreach (var d in Data08.Digits)
                 {
                     // parse for the "written" digits and store found indexes in a dictionary
                     var firstIndexWritten = line.IndexOf(d.Key);

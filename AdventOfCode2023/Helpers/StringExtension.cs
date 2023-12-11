@@ -35,7 +35,7 @@ namespace AdventOfCode2023.Helpers
 
         public static MatchCollection GetNumberMatches(this string s)
         {
-            return s.GetMatchesOfRegex(@"\d+");
+            return s.GetMatchesOfRegex(@"[-+]?\d+");
         }
 
         /// <summary>

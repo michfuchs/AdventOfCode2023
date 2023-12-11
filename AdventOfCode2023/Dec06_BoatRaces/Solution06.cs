@@ -31,7 +31,7 @@
         /// </summary>
         public long GetSolutionPartTwo()
         {
-            long total = 0;
+            long total = 0; 
             var race = Data06.RaceTwo;
             for (var iTime = 0; iTime <= race.Time; iTime++)
             {
